@@ -35,7 +35,7 @@
     const story = stories[current];
     const text = story.details[selectedDetail];
     $('#detail-caption').textContent = detailNames[selectedDetail] + ' / ' + story.label;
-    $('#detail-copy').textContent = text === null ? '—' : text;
+    $('#detail-copy').textContent = text === null ? '-' : text;
     $('#detail-copy').classList.toggle('deliberate-blank', text === null);
     $('#detail-card').hidden = false;
     $$('[data-detail]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.detail === selectedDetail)));
@@ -65,7 +65,7 @@
       const label = document.createElement('p'); label.className = 'eyebrow'; label.textContent = String(index + 1).padStart(2, '0') + ' / ' + story.label;
       const subtitle = document.createElement('h3'); subtitle.textContent = story.subtitle;
       const text = comparison === 'moment' ? story.doorReaction : story.details[comparison];
-      const quote = document.createElement('blockquote'); quote.textContent = text === null ? '—' : '“' + text + '”'; quote.classList.toggle('deliberate-blank', text === null);
+      const quote = document.createElement('blockquote'); quote.textContent = text === null ? '-' : '“' + text + '”'; quote.classList.toggle('deliberate-blank', text === null);
       card.append(label, subtitle, quote); return card;
     }));
     $$('[data-compare]').forEach(b => { const active = b.dataset.compare === comparison; b.classList.toggle('is-active', active); b.setAttribute('aria-pressed', String(active)); });

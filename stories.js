@@ -38,7 +38,7 @@ window.LANDING_STORIES = [
       "pipes": null,
       "top": "A rooflight, perhaps, or a window another floor up.",
       "window": "Am I meant to turn where the steel crosses the glass?",
-      "stairs": "Next flight, then ask—or ask before the next flight?"
+      "stairs": "Next flight, then ask, or ask before the next flight?"
     }
   },
   {
