@@ -7,11 +7,11 @@
   const detailNames = { railing: 'Railing', pipes: 'Pipes', top: 'The top', window: 'Window', stairs: 'Stairs' };
   const detailOrder = Object.keys(detailNames);
   let current = 0, selectedDetail = null, detailTrigger = null, comparison = 'moment', withoutWords = false;
-  const visited = new Set(['resident']);
-  function renderStory(index, { focusTab = false, animate = true } = {}) {
+  const visited = new Set();
+  function renderStory(index, { focusTab = false, animate = true, countExplored = true } = {}) {
     current = (index + stories.length) % stories.length;
     const story = stories[current];
-    visited.add(story.id);
+    if (countExplored) visited.add(story.id);
     if (withoutWords) setWithoutWords(false);
     document.documentElement.style.setProperty('--accent', story.color);
     $('#voice-subtitle').textContent = story.subtitle;
@@ -120,5 +120,5 @@
     if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); renderStory(current + (e.key === 'ArrowRight' ? 1 : -1), { focusTab: true }); }
     if (/^[1-5]$/.test(e.key)) { e.preventDefault(); const name = detailOrder[Number(e.key) - 1]; openDetail(name, $('.hotspot[data-detail="' + name + '"]')); }
   });
-  renderStory(0, { animate: false });
+  renderStory(0, { animate: false, countExplored: false });
 })();
