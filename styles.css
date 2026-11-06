@@ -110,22 +110,24 @@ button:focus-visible, [tabindex]:focus-visible, a:focus-visible {
   border-bottom-color: var(--ink);
 }
 
-.story-place {
+.story p {
+  margin: 0 0 1rem;
+  font-family: var(--serif);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
+
+.story .story-place {
   margin: 1.5rem 0 0.5rem;
   color: var(--muted);
+  font-family: var(--sans);
   font-size: 0.85rem;
+  line-height: 1.6;
 }
 
 .story h2 {
   font-size: 2rem;
   margin: 0 0 1.25rem;
-}
-
-#story-copy p {
-  margin: 0 0 1rem;
-  font-family: var(--serif);
-  font-size: 1.06rem;
-  line-height: 1.75;
 }
 
 /* Comparison table */
@@ -216,11 +218,6 @@ td.blank { color: var(--muted); }
   white-space: nowrap;
 }
 
-.noscript-note {
-  background: #f3e4cb;
-  padding: 1rem;
-}
-
 /* Phones and narrow windows */
 
 @media (max-width: 820px) {
@@ -244,4 +241,16 @@ td.blank { color: var(--muted); }
     font-family: var(--sans);
     font-size: 0.8rem;
   }
+}
+
+/* Printing: the tabs don't work on paper, so print all three stories */
+
+@media print {
+  body { max-width: none; padding: 0; }
+  .voice-tabs { display: none; }
+  .story[hidden] { display: block; }
+  .experience { display: block; padding-bottom: 1rem; }
+  .photo img { max-width: 60%; }
+  .story, tr { break-inside: avoid; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; }
 }

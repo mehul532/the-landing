@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Landing by Mehul Garg for ENG 169. One photograph of a stairwell and three people on it at 4:17 p.m.">
+  <meta name="description" content="The Landing by Mehul Garg for ENG 169. One photograph of a stairwell and three people standing in it at 4:17 p.m.">
   <meta name="author" content="Mehul Garg">
   <title>The Landing</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <script src="stories.js" defer></script>
+  <!-- Without JavaScript the tabs can't switch, so hide them and show all three stories. -->
+  <noscript><style>.voice-tabs { display: none; } .story[hidden] { display: block; }</style></noscript>
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="page-header">
     <h1>The Landing</h1>
     <p class="byline">Mehul Garg · ENG 169</p>
-    <p class="intro">One photograph of a stairwell, and three people standing in it at the same moment, 4:17 p.m. Choose a person to read what they notice.</p>
+    <p class="intro">Three people stand in this stairwell at the same moment, 4:17 p.m. Choose one to read what they notice.</p>
   </header>
 
   <main>
@@ -27,23 +28,84 @@
 
       <div class="reading">
         <div class="voice-tabs" role="tablist" aria-label="Choose a person">
-          <button id="tab-resident" class="voice-tab" data-voice="resident" role="tab" aria-selected="true" aria-controls="story-panel">The resident</button>
-          <button id="tab-visitor" class="voice-tab" data-voice="visitor" role="tab" aria-selected="false" aria-controls="story-panel" tabindex="-1">The visitor</button>
-          <button id="tab-caretaker" class="voice-tab" data-voice="caretaker" role="tab" aria-selected="false" aria-controls="story-panel" tabindex="-1">The caretaker</button>
+          <button id="tab-resident" class="voice-tab" role="tab" aria-selected="true" aria-controls="story-resident">The resident</button>
+          <button id="tab-visitor" class="voice-tab" role="tab" aria-selected="false" aria-controls="story-visitor" tabindex="-1">The visitor</button>
+          <button id="tab-caretaker" class="voice-tab" role="tab" aria-selected="false" aria-controls="story-caretaker" tabindex="-1">The caretaker</button>
         </div>
-        <article id="story-panel" class="story" role="tabpanel" aria-labelledby="tab-resident" tabindex="0">
-          <p class="story-place" id="story-place"></p>
-          <h2 id="story-title"></h2>
-          <div id="story-copy"></div>
+
+        <article id="story-resident" class="story" role="tabpanel" aria-labelledby="tab-resident" tabindex="0">
+          <p class="story-place">The resident · Third-floor turn · 4:17 p.m.</p>
+          <h2>The Turn Before My Own Door</h2>
+          <p>Third-floor turn, where the bag always switches hands and the plastic has twisted into a rope across my fingers, left hand on the rail, right foot already on the worn middle of the next step, and I could do this with my eyes on the groceries. Eggs, bread, milk. Is the milk sweating through onto the receipt? I press the bag against my knee to check.</p>
+          <p>Two floors down, the heavy door thumps shut and I don’t turn around, because someone down there has been climbing and stopping and climbing again, and now they’ve stopped, and that’s their business. My hand finds the smooth patch on the rail where everyone’s hand goes, and then the little ridge before the bracket, and then the turn.</p>
+          <p>Overhead, black lines cross more black lines, and I look down before they can turn into anything. My other hand feels wrong. It’s empty. There should be a second bag in it. The potatoes. I left them at the checkout. I set the bag down on the landing, dig for my keys, and try to remember if the store closes at six.</p>
+        </article>
+
+        <article id="story-visitor" class="story" role="tabpanel" aria-labelledby="tab-visitor" tabindex="0" hidden>
+          <p class="story-place">The visitor · One flight up from the entrance · 4:17 p.m.</p>
+          <h2>Come Up When You Get Here</h2>
+          <p>One flight up from the entrance, I stop. The text says, “Come up when you get here.” Come up how far? The earlier text said 4C. Is that four floors up, or three? My phone buzzes in my hand. A reminder I forgot to cancel. Something metal knocks somewhere above me. A bucket? I step to the side of the stairs and look at my phone so I seem less lost.</p>
+          <p>The entrance bangs just below me, and I check the time again. 4:17. Was I supposed to be here at quarter past? I look back down, but the turn of the stairs hides the door. No footsteps follow. Then I look straight up between the railings for someone leaning over to wave me up. Nobody. Just more railings.</p>
+          <p>Instructions, then: take the next flight, keep to one side, don’t call out a name in a building you just walked into. A narrow window runs up the right side, crossed by steel; the afternoon is still going on out there without any instructions. I type “I’m here” and keep my thumb over the arrow while I listen for another step.</p>
+        </article>
+
+        <article id="story-caretaker" class="story" role="tabpanel" aria-labelledby="tab-caretaker" tabindex="0" hidden>
+          <p class="story-place">The caretaker · Fourth-floor landing · 4:17 p.m.</p>
+          <h2>The Rail After the Cloth Passes</h2>
+          <p>Fourth-floor landing. Left rail: done. Inner bars: still a thumbprint near the bottom joint. Floor edge: a little grit against the wall. I fold the cloth once more, work it around the joint, then turn the dirty side in. The bucket handle taps the railing when I set it down. Too full to carry one-handed without the water slopping over the rim.</p>
+          <p>Above: white pipes tucked under the ironwork. Dust along the elbow, out of reach from this step. Leave it for the long brush. Right-hand glass: one high mark, behind the steel that crosses it. Not a job to do leaning out. I add it to the list on the folded paper in my pocket. Below: a shoe scrapes, stops, scrapes again. Plastic bag against the rail. 3B, back from the store.</p>
+          <p>A small click comes up the shaft; I hold the bucket still. Ground-floor door closer, probably. No view of the entrance from here. Lower down, a step that stops every few stairs. Not one of ours. Checks before leaving: cloth packed, wet edge wiped, next tread clear. I turn the bucket handle so it won’t catch a coat, and leave room beside it for whoever comes around the turn.</p>
         </article>
       </div>
     </section>
 
     <section class="compare" aria-labelledby="compare-title">
       <h2 id="compare-title">Same moment, different attention</h2>
-      <p>What each person notices in the photo. A dash means they don't notice it at all.</p>
+      <p>What each person notices at 4:17. A dash means they don’t notice it at all.</p>
       <div class="table-wrap">
-        <table id="compare-table"></table>
+        <table>
+          <thead>
+            <tr><th scope="col">Detail</th><th scope="col">The resident</th><th scope="col">The visitor</th><th scope="col">The caretaker</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Door closing below</th>
+              <td data-label="The resident">Two floors down, the heavy door thumps shut and I don’t turn around.</td>
+              <td data-label="The visitor">The entrance bangs just below me, and I check the time again.</td>
+              <td data-label="The caretaker">A small click comes up the shaft; I hold the bucket still.</td>
+            </tr>
+            <tr>
+              <th scope="row">Railings</th>
+              <td data-label="The resident">My hand knows the smooth patch before I reach it.</td>
+              <td data-label="The visitor">Which of these railings is the flight I need?</td>
+              <td data-label="The caretaker">Inner joint: thumbprint gone, cloth folded.</td>
+            </tr>
+            <tr>
+              <th scope="row">Pipes</th>
+              <td class="blank" data-label="The resident"><span aria-hidden="true">–</span><span class="visually-hidden">Doesn’t notice</span></td>
+              <td class="blank" data-label="The visitor"><span aria-hidden="true">–</span><span class="visually-hidden">Doesn’t notice</span></td>
+              <td data-label="The caretaker">Dust at the elbow: get the long brush.</td>
+            </tr>
+            <tr>
+              <th scope="row">Top of the shaft</th>
+              <td class="blank" data-label="The resident"><span aria-hidden="true">–</span><span class="visually-hidden">Doesn’t notice</span></td>
+              <td class="blank" data-label="The visitor"><span aria-hidden="true">–</span><span class="visually-hidden">Doesn’t notice</span></td>
+              <td class="blank" data-label="The caretaker"><span aria-hidden="true">–</span><span class="visually-hidden">Doesn’t notice</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Window</th>
+              <td class="blank" data-label="The resident"><span aria-hidden="true">–</span><span class="visually-hidden">Doesn’t notice</span></td>
+              <td data-label="The visitor">Am I supposed to turn where the steel crosses the glass?</td>
+              <td data-label="The caretaker">High mark behind the steel: put it on the list.</td>
+            </tr>
+            <tr>
+              <th scope="row">Stairs</th>
+              <td data-label="The resident">Bag across, left hand down, right foot next.</td>
+              <td data-label="The visitor">Next flight, then ask? Or ask before the next flight?</td>
+              <td data-label="The caretaker">Wet edge wiped, next tread clear.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p class="compare-note">Nobody looks at the top of the shaft, which is the one place the camera was pointed.</p>
     </section>
@@ -51,23 +113,21 @@
     <section class="reflection" aria-labelledby="reflection-title">
       <h2 id="reflection-title">Reflection</h2>
       <div class="reflection-text">
-        <p>I chose <em>The Landing</em> because I was interested in how the reason you are in a space decides what you notice in it. I took the photograph in the Teacher Education Building during our class photography activity, thinking about Perec's line on p. 38, "We don't think enough about staircases." On the same page he says nothing is "uglier, colder, more hostile" than the staircases in today's apartment buildings, and this stairwell, all steel railings and beige walls, is that kind of staircase. Standing on the ground floor and pointing the camera straight up turned it into overlapping lines, window light, and one bright rectangle at the top. The webpage keeps that one photo the same while three invented people stand in the stairwell at 4:17 p.m.: someone coming home, someone visiting for the first time, and someone cleaning. Like the building Perec imagines with its front removed on p. 40, you can see all three at once.</p>
-        <p>Finding the angle took several tries. Looking straight up flattened the climb into planes, so the window, the steel stringers, and the pipes all fit in one frame, but it also made the route hard to follow. When I first showed the concept to my TA, Kalysta Fern, the drafts felt too uniform because all three voices described the same things. So I separated how each person thinks. The resident moves on muscle memory and errands and never looks at the window. The visitor is stuck on what to do next. The caretaker thinks in checklists, like Perec's inventories on pp. 41–43. I also gave each one a different sentence shape: long run-on sentences for the resident, questions for the visitor, and short lists for the caretaker. Leaving blanks for details a person skips made their attention feel believable. In revision I also had the three hear each other. The resident hears the visitor stopping on the stairs, the visitor hears the caretaker's bucket, the caretaker recognizes the resident's grocery bag, and all three hear the same door close at different volumes.</p>
-        <p>I'm happiest with the comparison, because reading across the table shows the pattern all at once. While revising I noticed that none of the three people ever looks at the top of the shaft, which is exactly where my camera was pointed, so I made that the one detail nobody notices. That connects to Perec's advice on p. 45 to "look upwards." I also cut a lot of extra features from earlier versions so that the photo and the stories are what you actually look at. If I kept working on it, I would record sound in the stairwell, like the door and footsteps, so you could hear how the same door sounds different from each floor.</p>
+        <p>I chose <em>The Landing</em> because I was interested in how the reason you are in a space decides what you notice in it. I took the photograph in the Teacher Education Building during our class photography activity, thinking about Perec’s line on p. 38, “We don’t think enough about staircases.” On the same page he says that in today’s apartment buildings, nothing is “uglier, colder, more hostile” than the staircases, and this stairwell, all steel railings and beige walls, is that kind of staircase. Standing on the ground floor and pointing the camera straight up turned it into overlapping lines, window light, and one bright rectangle at the top. The webpage keeps that one photo the same while three invented people stand in the stairwell at 4:17 p.m.: someone coming home, someone visiting for the first time, and someone cleaning. As in the building Perec imagines with its front removed on p. 40, you can see all three at once.</p>
+        <p>Finding the angle took several tries. Looking straight up flattened the climb into planes, so the window, the steel stringers, and the pipes all fit in one frame, but it also made the route hard to follow. When I first showed the concept to my TA, Kalysta Fern, the drafts felt too uniform because all three voices described the same things. So I separated how each person thinks. The resident moves on muscle memory and errands and never looks at the window. The visitor is stuck on what to do next. The caretaker thinks in checklists, like Perec’s inventories on pp. 41–43. I also gave each one a different sentence shape: long run-on sentences for the resident, questions for the visitor, and short lists for the caretaker. Leaving blanks for details a person skips made their attention feel believable. In revision I also had the three hear each other. The resident hears the visitor stopping on the stairs, the visitor hears the caretaker’s bucket, the caretaker recognizes the resident’s grocery bag, and all three hear the same door close at different volumes.</p>
+        <p>I’m happiest with the comparison because reading across the table shows the pattern all at once. While revising, I noticed that none of the three people ever looks at the top of the shaft, which is exactly where my camera was pointed, so I made that the one detail nobody notices. That connects to Perec’s advice on p. 45 to “look upwards.” I also cut a lot of extra features from earlier versions so that the photo and the stories are what you actually look at. If I kept working on it, I would record sound in the stairwell, like the door and footsteps, so you could hear how the same door sounds different from each floor.</p>
       </div>
     </section>
 
     <section class="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">Sources</h2>
-      <p>Perec, Georges. <em>Species of Spaces and Other Pieces</em>. Edited with an introduction and translated by John Sturrock, Penguin, Penguin Twentieth-Century Classics, pp. 38, 40–45. Course PDF.</p>
-      <p>Outside the course reading: the building Perec plans on p. 40 became his novel <em>Life A User's Manual</em>, which is set at a single moment in one Paris apartment building (<a href="https://godine.com/products/life-a-users-manual" target="_blank" rel="noopener noreferrer">Godine's publisher description</a>).</p>
+      <p>Perec, Georges. <em>Species of Spaces and Other Pieces</em>. Edited and translated by John Sturrock, Penguin Books, pp. 38, 40–45. Penguin Twentieth-Century Classics. Course PDF.</p>
+      <p>Outside the course reading: the building Perec plans on p. 40 became his novel <em>Life A User’s Manual</em>, which is set at a single moment in one Paris apartment building (<a href="https://godine.com/products/life-a-users-manual" target="_blank" rel="noopener noreferrer">Godine’s publisher description</a>).</p>
     </section>
   </main>
 
   <footer class="page-footer">
     <p>Project and photograph by Mehul Garg · ENG 169</p>
   </footer>
-
-  <noscript><p class="noscript-note">Turn on JavaScript to read the three stories.</p></noscript>
 </body>
 </html>
